@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/filter_all"
+        android:title="All Contacts"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/filter_google"
+        android:title="Google Contacts"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/filter_device"
+        android:title="Device Contacts"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/filter_sim"
+        android:title="SIM Contacts"
+        app:showAsAction="never" />
+</menu>

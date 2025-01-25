@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavigationActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/blue_trans</item>
+<!--        <item name="android:width">0dp</item> &lt;!&ndash; Optional: set width to 0 to further minimize it &ndash;&gt;-->
+<!--        <item name="android:height">0dp</item> &lt;!&ndash; Optional: set height to 0 to further minimize it &ndash;&gt;-->
+    </style>
+
+<!--    <style name="BottomNavigationActiveIndicator" parent="">-->
+<!--        <item name="android:background">@drawable/background_edit_text</item>-->
+<!--    </style>-->
+</resources>

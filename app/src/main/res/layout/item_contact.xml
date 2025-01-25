@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="contact"
+            type="com.alim.callerid.model.ModelContacts" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:imageUrl="@{contact.image}"
+            app:fallbackName="@{contact.name}"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_height="wrap_content"
+            android:text="@{contact.name}"
+            android:textSize="18sp"
+            android:textColor="?black_white"
+            android:layout_marginEnd="16sp"
+            app:layout_constraintEnd_toStartOf="@id/block"
+            app:layout_constraintBottom_toTopOf="@id/number"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintTop_toTopOf="@id/profile_pic"/>
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{contact.number}"
+            android:textSize="14sp"
+            android:layout_marginEnd="16sp"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintEnd_toStartOf="@id/block"
+            app:layout_constraintStart_toEndOf="@id/profile_pic"
+            app:layout_constraintBottom_toBottomOf="@id/profile_pic"/>
+
+        <View
+            android:id="@+id/border_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#1A878787"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/block"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:tint="#F44336"
+            android:visibility="@{contact.blocked ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/round_block_24"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

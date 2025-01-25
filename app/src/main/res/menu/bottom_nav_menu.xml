@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/contactsFragment"
+        android:icon="@drawable/round_contacts_24"
+        android:title="Contacts" />
+
+    <item
+        android:id="@+id/blockNumbersFragment"
+        android:icon="@drawable/round_block_24"
+        android:title="Blocked" />
+</menu>

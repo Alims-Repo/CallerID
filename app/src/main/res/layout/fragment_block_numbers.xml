@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.alim.callerid.ui.viewmodel.ContactsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.MainActivity">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge" >
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/search_name_numbers"
+                android:textSize="16sp"
+                android:paddingHorizontal="24dp"
+                android:inputType="textPersonName"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/background_edit_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:itemAnimation="@{true}"
+            app:contactList="@{viewModel.filterBlocked}"
+            android:visibility="@{viewModel.filterBlocked.size() > 0 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_contact" />
+
+        <LinearLayout
+            android:id="@+id/empty_state_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="32dp"
+            android:visibility="@{viewModel.filterBlocked.size() == 0 ? View.VISIBLE : View.GONE}"
+            app:animateVisibility="@{viewModel.filterBlocked.size() == 0}">
+
+            <ImageView
+                android:id="@+id/empty_state_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:tint="?black_white"
+                android:src="@drawable/round_block_24"
+                android:contentDescription="Empty state image" />
+
+            <TextView
+                android:id="@+id/empty_state_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Blocked Contacts"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <TextView
+                android:id="@+id/empty_state_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.blockedMessage}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="32dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

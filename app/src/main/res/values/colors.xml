@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_500">#2196F3</color> <!-- Primary Blue -->
+    <color name="blue_700">#1976D2</color> <!-- Darker variant -->
+    <color name="blue_light_200">#BBDEFB</color> <!-- Light Blue -->
+    <color name="blue_light_700">#64B5F6</color> <!-- Medium Light Blue -->
+    <color name="blue_trans">#1F2196F3</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="gray">#8E8E8E</color>
+</resources>

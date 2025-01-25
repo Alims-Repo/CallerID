@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="black_white" format="color"/>
+    <attr name="navigation_bar_bg" format="color"/>
+
+</resources>
